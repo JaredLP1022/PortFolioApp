@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(15, 24, 33);
+   
+}
+
+.card-project:hover{
+    border: 2px solid white;
+    background-color: rgb(15, 24, 33);
+}
+.card-project{
+    background-color: rgb(18, 31, 44);
+}

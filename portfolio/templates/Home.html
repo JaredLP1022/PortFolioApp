@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <header class="row bg-black"  >
+      <div class="col-md-2">
+        <img src="{% static 'portFolio/Jared.jpg' %}"  class="img-fluid " alt="">
+      </div>
+      <div class="col-md-8">
+        <h1 class="text-white" >Eduardo Jared López Poseros</h1>
+      </div>
+    </header>
+
+  <div class="row my-4 text-center">
+    <h3 class="text-white">Mis Poryectos(My Porjects)</h3>
+
+    {% for project in projects %}
+
+    <div class="col-md-4 p-4">
+      <div class="card  card-project">
+        <div class="card-body">
+          <h5 class="card-title"> {{project.title}} </h5>
+          <p class="card-text"> {{project.description}} </p>
+          <img  src="{{project.image.url}}" alt="" class="img-fluid"> 
+          {% if project.url %}
+          <a href="{{project.url}}"> {{project.title}} </a>
+          {% endif%}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    {% endfor %}
+
+{% endblock %}
